@@ -1,3 +1,5 @@
+
+
 import java.util.Scanner;
 
 public class Caesar {
@@ -5,19 +7,21 @@ public class Caesar {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
-		
-		//Read in message
-		
-		//Read in shift
-		
-		//Loop through message
-			//if letter is alphabetic
-				//apply shift
-				//if letter is past 'Z'
-					//subtract 26
-			//add letter to output
-		
-		//print output
-	
+
+		String message = in.nextLine();
+		int shift = in.nextLine().charAt(0) - 'a';
+		String output = "";
+		for (int x = 0; x < message.length(); x++) {
+			char letter = message.charAt(x);
+			if (Character.isAlphabetic(letter)) {
+				letter += shift;
+				if (letter > 'z') {
+					letter -= 26;
+				}
+			}
+			output += letter;
+		}
+		System.out.println(output);
 	}
+
 }
